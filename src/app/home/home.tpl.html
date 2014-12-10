@@ -5,10 +5,16 @@
 
   <div layout="row" flex="80" layout-fill style="min-height:500px">
     <md-card class="terminal" layout-fill>
-      <md-content class="terminal">
-        <p>
-        {{type}}
-        </p>
+      <md-content class="terminal" style="max-height:480px">
+        <div ng-repeat="output in shelloutput">
+          <p>
+            {{output.cmd}}
+          </p>
+          <p>
+            {{output.resp}}
+          </p>
+        </div>
+        <div id="bottom" class="anchor"></div>
       </md-content>
     </md-card>
   </div>
