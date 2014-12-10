@@ -39,7 +39,7 @@ angular.module('sshfs.home', [
 	$http.get('/api/shells/recent')
 		.success(function(data) {
 			$scope.shell = data[0];
-			console.log($scope.shell);
+			// console.log($scope.shell);
 			shownext();
 		})
 		.error(function(data) {
