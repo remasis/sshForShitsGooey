@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="static/vendor.css">
+    <link rel="stylesheet" href="static/app.css">
+    <!-- TEMP REQUIRES CDN FOR FONTAWESOME -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- END TEMP REQUIRES CDN FOR FONTAWESOME -->
+</head>
+<body ng-app="sshfs" ng-controller="AppCtrl" ng-strict-di layout="row">
+    <script src="static/vendor.js"></script>
+    <script src="static/htmlTemplates.js"></script>
+    <!-- inject:js -->
+    <!-- endinject -->
+    <md-sidenav layout="column"
+    style="overflow: hidden; display: flex;" 
+    class="md-sidenav-left md-whiteframe-z2 md-closed md-locked-open" 
+    md-component-id="left" 
+    md-is-locked-open="$media('gt-md')" 
+    tabindex="-1">
+        <md-toolbar layout="column">
+            <h1 class="md-toolbar-tools" flex layout="row">
+                <a href ui-sref="home" ng-click="closeMenu()" layout="row" flex>
+                    <span  class="fa-stack fa-lg">
+                    <i class="fa fa-lg fa-terminal fa-stack-2x"></i>
+                    <i class="fa fa-stack-1x fa-cloud" style="top:-5px; left:9px"></i>
+                    </span>
+                </a>
+                <span>SSH For Shits</span>
+            </h1>
+        </md-toolbar>
+        <md-content flex style="overflow: auto;">
+        <!-- TODO: 
+            * build the nav list dynamically with service
+            * use angular material demo to make better.
+        -->
+            <p><md-button ng-click="closeMenu()" ui-sref="home" class="menu-item md-menu-item">
+                <i class="fa fa-fw fa-home"></i> View Live
+            </md-button></p>
+            <p><md-button ng-click="closeMenu()" ui-sref="users" class="menu-item md-menu-item" ng-disabled="true">
+                <i class="fa fa-fw fa-archive"></i> Archives
+            </md-button></p>
+        </md-content>
+    </md-sidenav>
+    <div layout="column" layout-fill>
+        <md-toolbar layout="column">
+            <div class="md-toolbar-tools" flex layout="column">
+                <div layout="row" flex layout-align="center center">
+                    <div hide-gt-md  ng-click="openMenu()">
+                        <i class="fa fa-lg fa-bars"></i>
+                    </div>
+                    <div hide-sm layout="column">
+                        Live View
+                    </div>
+                    <div flex></div>
+                    <div>
+                        <span  class="fa-stack fa-lg">
+                        <i class="fa fa-lg fa-terminal fa-stack-2x"></i>
+                        <i class="fa fa-stack-1x fa-cloud" style="top:-5px; left:9px"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </md-toolbar>
+        <md-content flex>
+            <md-whiteframe class="md-whiteframe-z1" flex>
+                <div layout="column" ui-view>
+                </div>
+            </md-whiteframe>
+        </md-content>
+    </div>
+</body>
+</html>
