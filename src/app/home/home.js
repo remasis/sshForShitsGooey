@@ -1,6 +1,5 @@
 angular.module('sshfs.home', [
-	'ui.router',
-	'titleService'
+	'ui.router'
 ])
 
 .config(function($stateProvider, $urlRouterProvider) {
@@ -15,11 +14,9 @@ angular.module('sshfs.home', [
 
 .run(function() {})
 
-.controller('homeCtrl', function HomeController($scope, titleService, $interval, $timeout, $http, $q, $anchorScroll, $location) {
-	console.log("hello from home");
-	titleService.set("SSH For Shits");
+.controller('homeCtrl', function HomeController($scope, $interval, $timeout, $http, $q, $anchorScroll, $location) {
 
-	//location hack....
+	//location hack for autoscroll...
 	$location.hash('bottom');
 
 	function displayTyped(str) {
@@ -64,7 +61,7 @@ angular.module('sshfs.home', [
 			resp: ""
 		};
 		displayTyped(act.cmd).then(function() {
-			$scope.shelloutput[actindex].resp = act.resp;
+			$scope.shelloutput[actindex].resp = act.resp.split("\n");
 			actindex = actindex + 1;
 			$timeout($anchorScroll, 1);
 			$timeout(shownext, 1000);

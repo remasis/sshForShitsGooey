@@ -10,8 +10,8 @@
           <p>
             {{output.cmd}}
           </p>
-          <p>
-            {{output.resp}}
+          <p ng-repeat="line in output.resp track by $index">
+            {{line}}
           </p>
         </div>
         <div id="bottom" class="anchor"></div>
