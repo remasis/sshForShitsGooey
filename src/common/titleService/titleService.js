@@ -1,7 +1,7 @@
 angular.module('titleService', [])
 	.factory('titleService', ['$window',
 		function($window) {
-			var title = "SSH For Shits Gooey";
+			var title = "Shells For Shits";
 			return {
 				set: function(newtitle) {
 					title = newtitle;

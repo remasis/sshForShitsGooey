@@ -13,7 +13,7 @@ angular.module('sshfs', [
 .run(function run() {})
 
 .controller('AppCtrl', function AppCtrl($scope, titleService, $mdSidenav) {
-	titleService.set('SSH for Shits');
+	titleService.set('Shells for Shits');
 
 	$scope.openMenu = function() {
 		$mdSidenav('left').open();
