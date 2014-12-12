@@ -52,7 +52,7 @@ angular.module('sshfs.home', [
 					actindex = 0;
 					$scope.shelloutput = [];
 					$scope.shell = data[0];
-					console.log($scope.shell);
+					// console.log($scope.shell);
 					shownext();
 				}
 			})
