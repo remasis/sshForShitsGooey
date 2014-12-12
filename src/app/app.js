@@ -5,7 +5,8 @@ angular.module('sshfs', [
 	'htmlTemplates', //created by gulp
 	//add for each route - not automated
 	'titleService',
-	'sshfs.home'
+	'sshfs.home',
+	'sshfs.attempts'
 ])
 
 .config(function($stateProvider, $urlRouterProvider) {})
