@@ -19,6 +19,6 @@ angular.module('sshfs.attempts', [
 			$scope.attempts = data;
 		})
 		.error(function(data) {
-			console.error("ZOMG ERROR getting shell db:", data);
+			console.error("ZOMG ERROR getting attempt db:", data);
 		});
 });

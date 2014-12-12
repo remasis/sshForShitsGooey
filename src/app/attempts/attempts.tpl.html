@@ -1,16 +1,21 @@
-<md-content>
-  <md-list layout="column" layout-padding layout-margin>
-    <md-item ng-repeat="attempt in attempts">
-      <md-item-content>
-        <div class="md-tile-left">
-            <i class='fa fa-terminal'></i>
-        </div>
-        <div class="md-tile-content">
-          <h3>{{attempt.user}}/{{attempt.pass}}</h3>
-          <h4>{{attempt.origin}} @ {{attempt.ts}}</h4>
-        </div>
-      </md-item-content>
-      <md-divider></md-divider>
-    </md-item>
-  </md-list>
-</md-content>
+<div layout="column" flex layout-fill>
+  <md-content style="height: 600px; overflow-x:hidden">
+    <section>
+      <md-subheader class="md-primary">Attempted Logins (No commands issued)</md-subheader>
+      <md-list layout="column" layout-padding layout-margin>
+        <md-item ng-repeat="attempt in attempts">
+          <md-item-content>
+            <div class="md-tile-left">
+                <i class='fa fa-terminal'></i>
+            </div>
+            <div class="md-tile-content">
+              <h3>{{attempt.user}}/{{attempt.pass}}</h3>
+              <h4>{{attempt.origin}} @ {{attempt.ts}}</h4>
+            </div>
+          </md-item-content>
+          <md-divider></md-divider>
+        </md-item>
+      </md-list>
+    </section>
+  </md-content>
+</div>
