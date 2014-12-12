@@ -44,15 +44,15 @@ angular.module('sshfs.home', [
 			.success(function(data) {
 				if (lastId === data[0]._id) {
 					//do nothing it's the same
-					console.log('no change');
+					// console.log('no change');
 					$timeout(loadShell,5000);
 				} else {
-					console.log("CHANGED");
+					// console.log("CHANGED");
 					lastId = data[0]._id;
 					actindex = 0;
 					$scope.shelloutput = [];
 					$scope.shell = data[0];
-					// console.log($scope.shell);
+					console.log($scope.shell);
 					shownext();
 				}
 			})
@@ -63,7 +63,7 @@ angular.module('sshfs.home', [
 
 	function shownext() {
 		if (actindex >= $scope.shell.shellactivity.length) {
-			console.log("all done with data");
+			// console.log("all done with data");
 			$timeout(loadShell, 3000);
 			return;
 		}
