@@ -2,14 +2,34 @@
 <html>
 <head>
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <!-- use vendor.css if static hosting needed
     <link rel="stylesheet" href="static/vendor.css">
+    -->
+    <!-- begin vendor CDNs for css-->
+    <!-- Angulars Material CSS now available via Google CDN; version 0.6 used here -->
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/angular_material/0.6.1/angular-material.min.css">
+    <!-- end vendor CDNs for css-->
+
     <link rel="stylesheet" href="static/app.css">
     <!-- TEMP REQUIRES CDN FOR FONTAWESOME -->
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- END TEMP REQUIRES CDN FOR FONTAWESOME -->
 </head>
 <body ng-app="sshfs" ng-controller="AppCtrl" ng-strict-di layout="row">
+    <!-- use vendor.js if static hosting needed
     <script src="static/vendor.js"></script>
+    -->
+    <!-- begin CDNs instead of vendor.js -->    
+    <!-- Angular Material Dependencies -->
+    <script src="//cdn.jsdelivr.net/hammerjs/2.0.4/hammer.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular-animate.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular-aria.min.js"></script>
+
+    <!-- Angular Material Javascript now available via Google CDN; version 0.6 used here -->
+    <script src="//ajax.googleapis.com/ajax/libs/angular_material/0.6.1/angular-material.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.11/angular-ui-router.min.js"></script>
+    <!-- end CDNs instead of vendor.js -->
     <script src="static/htmlTemplates.js"></script>
     <!-- inject:js -->
     <!-- endinject -->
@@ -55,9 +75,6 @@
                 <div layout="row" flex layout-align="center center">
                     <div hide-gt-md  ng-click="openMenu()">
                         <i class="fa fa-lg fa-bars"></i> 
-                    </div>
-                    <div style="margin-left:20px">
-                        Live View
                     </div>
                     <div flex></div>
                     <div>
