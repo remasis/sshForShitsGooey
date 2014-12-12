@@ -45,7 +45,7 @@ angular.module('sshfs.home', [
 				if (lastId === data[0]._id) {
 					//do nothing it's the same
 					// console.log('no change');
-					$timeout(loadShell,5000);
+					$timeout(loadShell,15000);
 				} else {
 					// console.log("CHANGED");
 					lastId = data[0]._id;
