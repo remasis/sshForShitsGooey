@@ -13,7 +13,12 @@ angular.module('sshfs.attempts', [
 
 .run(function() {})
 
-.controller('attemptsCtrl', function HomeController($scope, $http, $location) {
+.controller('attemptsCtrl', function HomeController($scope, $http, $location, titleService) {
+	titleService.push("Login Attempts");
+	$scope.$on("$destroy", function() {
+        titleService.pop();
+    });
+
 	$http.get('/api/attempts/')
 		.success(function(data) {
 			$scope.attempts = data;

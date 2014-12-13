@@ -76,6 +76,9 @@
                     <div hide-gt-md  ng-click="openMenu()">
                         <i class="fa fa-lg fa-bars"></i> 
                     </div>
+                    <div style="margin-left:20px" ng-repeat="crumb in breadcrumbs">
+                        {{crumb}}
+                    </div>
                     <div flex></div>
                     <div>
                         <span  class="fa-stack fa-lg">

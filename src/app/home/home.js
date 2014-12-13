@@ -14,19 +14,27 @@ angular.module('sshfs.home', [
 
 .run(function() {})
 
-.controller('homeCtrl', function HomeController($scope, $interval, $timeout, $http, $q, $anchorScroll, $location) {
+.controller('homeCtrl', function HomeController($scope, $interval, $timeout, $http, $q, $anchorScroll, $location, titleService) {
+	titleService.push("Live View");
 
 	//location hack for autoscroll...
 	$location.hash('bottom');
 
 	var actindex = 0;
 	var lastId;
+	var timer;
+	$scope.$on("$destroy", function() {
+        if (timer) {
+            $timeout.cancel(timer);
+        }
+        titleService.pop();
+    });
 
 	function displayTyped(str) {
 		var i = 0;
 		var def = $q.defer();
 
-		var timer = $interval(function() {
+		$interval(function() {
 			if (i < str.length) {
 				$scope.shelloutput[actindex].cmd += str[i];
 				$anchorScroll();

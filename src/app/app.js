@@ -23,6 +23,8 @@ angular.module('sshfs', [
 		$mdSidenav('left').close();
 	};
 
+	$scope.breadcrumbs = titleService.getCrumbs();
+
 	//TODO: make this actually a service or (probably) a directive
 	$scope.notificationCount = 3;
 });
