@@ -63,7 +63,6 @@ angular.module('sshfs.home', [
 					actindex = 0;
 					$scope.shelloutput = [];
 					$scope.shell = data[0];
-					$scope.shell.shellactivity = JSON.parse('[{"ts":"2014-12-13T10:58:23.940758663Z","cmd":"sh-4.3$ ls","resp":". \\n\\n\\n\\n\\n\\n\\n\\n..\\n"},{"ts":"2014-12-13T10:58:27.980758599Z","cmd":"sh-4.3$ ls ../","resp":"ls: cannot access ../: No such file or directory\\n"},{"ts":"2014-12-13T10:58:33.90469407Z","cmd":"sh-4.3$ cd ..","resp":"sh: cd: command not found\\n"},{"ts":"2014-12-13T10:58:47.6647103Z","cmd":"sh-4.3$ ls /bin","resp":"ls: cannot access /bin: No such file or directory\\n"},{"ts":"2014-12-13T10:59:09.123687166Z","cmd":"sh-4.3$ ls /","resp":"ls: cannot access /: No such file or directory\\n"},{"ts":"2014-12-13T10:59:19.759690629Z","cmd":"sh-4.3$ echo ","resp":"sh: echo: command not found\\n"},{"ts":"2014-12-13T10:59:26.855686602Z","cmd":"sh-4.3$ pwd","resp":"sh: pwd: command not found\\n"},{"ts":"2014-12-13T10:58:47.6647103Z","cmd":"sh-4.3$ ls /bin","resp":"ls: cannot access /bin: No such file or directory\\n"},{"ts":"2014-12-13T10:59:09.123687166Z","cmd":"sh-4.3$ ls /","resp":"ls: cannot access /: No such file or directory\\n"},{"ts":"2014-12-13T10:59:19.759690629Z","cmd":"sh-4.3$ echo ","resp":"sh: echo: command not found\\n"},{"ts":"2014-12-13T10:59:26.855686602Z","cmd":"sh-4.3$ pwd","resp":"sh: pwd: command not found\\n"}]');
 					ts = new Date($scope.shell.login);
 					// console.log($scope.shell);
 					shownext();
