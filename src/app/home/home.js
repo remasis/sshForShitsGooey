@@ -17,7 +17,7 @@ angular.module('sshfs.home', [
 .controller('homeCtrl', function HomeController($scope, $interval, $timeout, $http, $q, $anchorScroll, $location, titleService) {
 	titleService.push("Live View");
 
-	$scope.realtime = 'static';
+	$scope.realtime = 'relative';
 
 	//location hack for autoscroll...
 	$location.hash('bottom');
