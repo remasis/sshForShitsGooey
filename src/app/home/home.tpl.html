@@ -1,21 +1,26 @@
-<div layout="column" layout-fill layout-align="start center">
-  <div layout="column" layout-align="start center">
-    <p>{{shell.src}} logged in as {{shell.user}}/{{shell.pass}}. This page auto-loads new shells as they appear</p>
+<div layout-sm="column" layout-gt-sm="row" layout-fill>
+  <div flex-gt-sm="20" layout-sm="row" layout-gt-sm="column" layout-align="center center">
+    <h4><span hide-sm>Timing</span> <i class="fa fa-lg fa-tachometer"></i></h4>
+    <md-radio-group ng-model="realtime" layout-sm="row" layout-gt-sm="column">
+      <md-radio-button value="realtime">As Entered (real time)</md-radio-button>
+      <md-radio-button value="static"> 1/Sec </md-radio-button>
+    </md-radio-group>
   </div>
-
-  <div layout="row" flex-sm="100" flex-gt-sm="80" layout-fill style="height:73vh;">
-    <md-card class="terminal" layout-fill>
-      <md-content class="terminal" style="height:71vh">
-        <div ng-repeat="output in shelloutput">
-          <p>
-            {{output.cmd}}
-          </p>
-          <p ng-repeat="line in output.resp track by $index">
-            {{line}}
-          </p>
-        </div>
-        <div id="bottom" class="anchor"></div>
-      </md-content>
-    </md-card>
+  <div layout="column" flex-gt-sm="80" layout-fill style="margin-top:5px;margin-right:50px" class="md-whiteframe-z3">
+    <div id='topbar' layout="row" layout-align="center center">
+        <span style="padding:10px">{{shell.src}} logged in as {{shell.user}}/{{shell.pass}}.</span>
+        <span hide-sm hide-md>New shells will be autoloaded</span>
+    </div>
+    <md-content class="terminal" style="height:70vh" layout-fill>
+      <div ng-repeat="output in shelloutput">
+        <p>
+          <pre>{{output.cmd}}</pre>
+        </p>
+        <p ng-repeat="line in output.resp track by $index">
+          {{line}}
+        </p>
+      </div>
+      <div id="bottom" class="anchor"></div>
+    </md-content>
   </div>
 </div>
