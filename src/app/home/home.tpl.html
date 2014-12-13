@@ -1,12 +1,11 @@
-<div layout="column" layout-fill layout-align="center center" >
-  <div layout="column" layout-align="center center">
-    <h1 hide-sm>Live View</h1>
+<div layout="column" layout-fill layout-align="start center">
+  <div layout="column" layout-align="start center">
     <p>{{shell.src}} logged in as {{shell.user}}/{{shell.pass}}. This page auto-loads new shells as they appear</p>
   </div>
 
-  <div layout="row" flex-sm="100" flex-gt-sm="80" layout-fill style="min-height:500px">
+  <div layout="row" flex-sm="100" flex-gt-sm="80" layout-fill style="height:73vh;">
     <md-card class="terminal" layout-fill>
-      <md-content class="terminal" style="max-height:480px">
+      <md-content class="terminal" style="height:71vh">
         <div ng-repeat="output in shelloutput">
           <p>
             {{output.cmd}}

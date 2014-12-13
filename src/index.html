@@ -56,7 +56,7 @@
             * use angular material demo to make better.
         -->
             <p><md-button ng-click="closeMenu()" ui-sref="home" class="menu-item md-menu-item">
-                <i class="fa fa-fw fa-home"></i> View Live
+                <i class="fa fa-fw fa-home"></i> Live View
             </md-button></p>
             <p><md-button ng-click="closeMenu()" ui-sref="attempts" class="menu-item md-menu-item">
                 <i class="fa fa-fw fa-list"></i> Login Attempts
@@ -80,11 +80,10 @@
                         {{crumb}}
                     </div>
                     <div flex></div>
-                    <div>
-                        <span  class="fa-stack fa-lg">
-                        <i class="fa fa-lg fa-terminal fa-stack-2x"></i>
-                        <i class="fa fa-stack-1x fa-cloud" style="top:-5px; left:9px"></i>
-                        </span>
+                    <div layout-padding layout-margin>
+                        <md-button href="https://github.com/remasis/sshForShitsGooey">
+                            <i class="fa fa-github fa-2x"></i> View on Github
+                        </md-button>
                     </div>
                 </div>
             </div>
